@@ -79,19 +79,19 @@ O problema do produtor-consumidor é um clássico da programação concorrente. 
   - [X] Chamar `t.join()`
 
 ### Fase 6: Testes e Validação (20 minutos)
-- [ ] Executar o programa e observar a saída
-- [ ] Verificar se o buffer nunca excede o tamanho máximo
-- [ ] Verificar se não há erros de índice (tentar remover de lista vazia)
-- [ ] Observar se produtores e consumidores estão sincronizados
-- [ ] Testar com diferentes números de produtores e consumidores
-- [ ] Testar com diferentes tamanhos de buffer
+- [X] Executar o programa e observar a saída
+- [X] Verificar se o buffer nunca excede o tamanho máximo
+- [X] Verificar se não há erros de índice (tentar remover de lista vazia)
+- [X] Observar se produtores e consumidores estão sincronizados
+- [X] Testar com diferentes números de produtores e consumidores
+- [X] Testar com diferentes tamanhos de buffer
 
 ### Fase 7: Melhorias (Opcional - 15 minutos)
-- [ ] Adicionar condição de parada (ex: produzir/consumir N itens)
-- [ ] Adicionar contador de itens produzidos/consumidos
-- [ ] Exibir estatísticas ao final da execução
-- [ ] Adicionar tratamento de exceções (try-except)
-- [ ] Adicionar logs mais detalhados com timestamp
+- [X] Adicionar condição de parada (ex: produzir/consumir N itens)
+- [X] Adicionar contador de itens produzidos/consumidos
+- [X] Exibir estatísticas ao final da execução
+- [X] Adicionar tratamento de exceções (try-except)
+- [X] Adicionar logs mais detalhados com timestamp
 
 ## 🧪 Como Testar
 

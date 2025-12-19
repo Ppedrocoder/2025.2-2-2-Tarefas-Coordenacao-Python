@@ -23,13 +23,13 @@ def produtor(id_produtor):
 
     for i in range(NUM_ITENS_POR_THREAD):
         item = random.randint(1, 100)
-        espacos_vazios.acquire()
-        lock.acquire()
         try:
+            espacos_vazios.acquire()
+            lock.acquire()
             buffer.append(item)
             with lock_contador:
                 produzido+=1
-            print(f'Produtor {id_produtor} produziu {item}, Buffer: {len(buffer):2d}/{TAMANHO_BUFFER} | {buffer} ')
+            print(f'Produtor {id_produtor} produziu {item:3d}, Buffer: {len(buffer):2d}/{TAMANHO_BUFFER} | {buffer} ')
         finally:
             lock.release()
         itens_disponiveis.release()
@@ -38,10 +38,10 @@ def produtor(id_produtor):
 def consumidor(id_consumidor):
     global consumido
 
-    itens_disponiveis.acquire()
-    lock.acquire()
     for i in range(NUM_ITENS_POR_THREAD):
         try:
+            itens_disponiveis.acquire()
+            lock.acquire()
             item = buffer.pop(0)
             with lock_contador:
                 consumido+=1
@@ -75,7 +75,8 @@ def main():
     tempo_total = time.time() - tempo_inicio
     print(f'Tempo total: {tempo_total}')
     esperado = NUM_PRODUTORES * NUM_ITENS_POR_THREAD
-
+    print(f'Produzido: {produzido}')
+    print(f'Consumido: {consumido}')
     if produzido == esperado and consumido == esperado:
         print("Execução feita corretamente")
     else:
