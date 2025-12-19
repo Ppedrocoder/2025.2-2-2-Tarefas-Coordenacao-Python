@@ -23,26 +23,26 @@ O problema do produtor-consumidor é um clássico da programação concorrente. 
 ## ✅ Checklist Passo a Passo
 
 ### Fase 1: Preparação (15 minutos)
-- [ ] Criar arquivo `produtor_consumidor.py` ou usar o `template_produtor_consumidor.py`
-- [ ] Importar bibliotecas necessárias: `threading`, `time`, `random`
-- [ ] Importar `Semaphore` e `Lock` de `threading`
-- [ ] Verificar as constantes já definidas: `TAMANHO_BUFFER`, `NUM_PRODUTORES`, `NUM_CONSUMIDORES`
+- [X] Criar arquivo `produtor_consumidor.py` ou usar o `template_produtor_consumidor.py`
+- [X] Importar bibliotecas necessárias: `threading`, `time`, `random`
+- [X] Importar `Semaphore` e `Lock` de `threading`
+- [X] Verificar as constantes já definidas: `TAMANHO_BUFFER`, `NUM_PRODUTORES`, `NUM_CONSUMIDORES`
 
 ### Fase 2: Estrutura de Dados (10 minutos)
-- [ ] Verificar que o buffer (lista vazia) já está criado
-- [ ] Criar um semáforo para controlar itens disponíveis: `itens_disponiveis = Semaphore(0)`
-- [ ] Criar um semáforo para controlar espaços vazios: `espacos_vazios = Semaphore(TAMANHO_BUFFER)`
-- [ ] Criar um lock (mutex) para proteger o acesso ao buffer: `lock = Lock()`
+- [X] Verificar que o buffer (lista vazia) já está criado
+- [X] Criar um semáforo para controlar itens disponíveis: `itens_disponiveis = Semaphore(0)`
+- [X] Criar um semáforo para controlar espaços vazios: `espacos_vazios = Semaphore(TAMANHO_BUFFER)`
+- [X] Criar um lock (mutex) para proteger o acesso ao buffer: `lock = Lock()`
 
 ### Fase 3: Implementar a Função Produtor (20 minutos)
-- [ ] Criar função `produtor(id_produtor)` que recebe o ID do produtor
-- [ ] Criar loop infinito ou com número definido de iterações
-- [ ] Gerar item aleatório (pode ser um número)
+- [X] Criar função `produtor(id_produtor)` que recebe o ID do produtor
+- [X] Criar loop infinito ou com número definido de iterações
+- [X] Gerar item aleatório (pode ser um número)
 - [ ] **Antes de adicionar ao buffer:**
-  - [ ] Aguardar por espaço vazio: `espacos_vazios.acquire()`
-  - [ ] Adquirir o lock: `lock.acquire()`
-- [ ] Adicionar item ao buffer
-- [ ] Exibir mensagem: "Produtor X produziu item Y. Buffer: [conteúdo]"
+  - [X] Aguardar por espaço vazio: `espacos_vazios.acquire()`
+  - [X] Adquirir o lock: `lock.acquire()`
+- [X] Adicionar item ao buffer
+- [X] Exibir mensagem: "Produtor X produziu item Y. Buffer: [conteúdo]"
 - [ ] **Depois de adicionar:**
   - [ ] Liberar o lock: `lock.release()`
   - [ ] Sinalizar item disponível: `itens_disponiveis.release()`
