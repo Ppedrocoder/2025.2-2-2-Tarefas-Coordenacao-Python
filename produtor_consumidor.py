@@ -29,7 +29,7 @@ def produtor(id_produtor):
             buffer.append(item)
             with lock_contador:
                 produzido+=1
-            print(f'Produtor {id_produtor} produziu {item}, Buffer: {len(buffer):2d}/{TAMANHO_BUFFER} | {buffer}')
+            print(f'Produtor {id_produtor} produziu {item}, Buffer: {len(buffer):2d}/{TAMANHO_BUFFER} | {buffer} ')
         finally:
             lock.release()
         itens_disponiveis.release()
