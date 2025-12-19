@@ -44,39 +44,39 @@ O problema do produtor-consumidor é um clássico da programação concorrente. 
 - [X] Adicionar item ao buffer
 - [X] Exibir mensagem: "Produtor X produziu item Y. Buffer: [conteúdo]"
 - [ ] **Depois de adicionar:**
-  - [ ] Liberar o lock: `lock.release()`
-  - [ ] Sinalizar item disponível: `itens_disponiveis.release()`
-- [ ] Simular tempo de produção: `time.sleep(random.uniform(0.1, 0.5))`
+  - [X] Liberar o lock: `lock.release()`
+  - [X] Sinalizar item disponível: `itens_disponiveis.release()`
+- [X] Simular tempo de produção: `time.sleep(random.uniform(0.1, 0.5))`
 
 ### Fase 4: Implementar a Função Consumidor (20 minutos)
-- [ ] Criar função `consumidor(id_consumidor)` que recebe o ID do consumidor
-- [ ] Criar loop infinito ou com número definido de iterações
+- [X] Criar função `consumidor(id_consumidor)` que recebe o ID do consumidor
+- [X] Criar loop infinito ou com número definido de iterações
 - [ ] **Antes de remover do buffer:**
-  - [ ] Aguardar por item disponível: `itens_disponiveis.acquire()`
-  - [ ] Adquirir o lock: `lock.acquire()`
-- [ ] Remover item do buffer (primeiro item da lista)
-- [ ] Exibir mensagem: "Consumidor X consumiu item Y. Buffer: [conteúdo]"
+  - [X] Aguardar por item disponível: `itens_disponiveis.acquire()`
+  - [X] Adquirir o lock: `lock.acquire()`
+- [X] Remover item do buffer (primeiro item da lista)
+- [X] Exibir mensagem: "Consumidor X consumiu item Y. Buffer: [conteúdo]"
 - [ ] **Depois de remover:**
-  - [ ] Liberar o lock: `lock.release()`
-  - [ ] Sinalizar espaço vazio: `espacos_vazios.release()`
-- [ ] Simular tempo de consumo: `time.sleep(random.uniform(0.1, 0.5))`
+  - [X] Liberar o lock: `lock.release()`
+  - [X] Sinalizar espaço vazio: `espacos_vazios.release()`
+- [X] Simular tempo de consumo: `time.sleep(random.uniform(0.1, 0.5))`
 
 ### Fase 5: Programa Principal (15 minutos)
-- [ ] Criar função `main()` ou bloco `if __name__ == "__main__":`
-- [ ] Criar lista para armazenar threads: `threads = []`
-- [ ] Criar threads de produtores:
-  - [ ] Loop de 0 até NUM_PRODUTORES
-  - [ ] Criar thread: `t = threading.Thread(target=produtor, args=(i,))`
-  - [ ] Adicionar à lista de threads
-  - [ ] Iniciar thread: `t.start()`
+- [X] Criar função `main()` ou bloco `if __name__ == "__main__":`
+- [X] Criar lista para armazenar threads: `threads = []`
+- [] Criar threads de produtores:
+  - [X] Loop de 0 até NUM_PRODUTORES
+  - [X] Criar thread: `t = threading.Thread(target=produtor, args=(i,))`
+  - [X] Adicionar à lista de threads
+  - [X] Iniciar thread: `t.start()`
 - [ ] Criar threads de consumidores:
-  - [ ] Loop de 0 até NUM_CONSUMIDORES
-  - [ ] Criar thread: `t = threading.Thread(target=consumidor, args=(i,))`
-  - [ ] Adicionar à lista de threads
-  - [ ] Iniciar thread: `t.start()`
+  - [X] Loop de 0 até NUM_CONSUMIDORES
+  - [X] Criar thread: `t = threading.Thread(target=consumidor, args=(i,))`
+  - [X] Adicionar à lista de threads
+  - [X] Iniciar thread: `t.start()`
 - [ ] Aguardar todas as threads terminarem:
-  - [ ] Loop em todas as threads
-  - [ ] Chamar `t.join()`
+  - [X] Loop em todas as threads
+  - [X] Chamar `t.join()`
 
 ### Fase 6: Testes e Validação (20 minutos)
 - [ ] Executar o programa e observar a saída
